@@ -1,4 +1,3 @@
-
 .cover {
     display: flex;
     flex-direction: column;
@@ -6,4 +5,31 @@
     align-items: center;
     background-color: #4ECDC4;
     height: 300px;
+}
+
+.posts {
+    margin-top: 10px;
+}
+
+.post {
+    border: 1px solid #e7e7e7;
+    padding: 15px;
+
+}
+
+.post>.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border-radius: 90px;
+    color: white;
 }
