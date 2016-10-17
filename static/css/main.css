@@ -1,3 +1,22 @@
+.main {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.middle-content {
+    flex: 1;
+    display: flex;
+}
+
+.middle-content > .left {
+    flex: 0 0 30%;
+}
+
+.middle-content > .right {
+    flex: 0 0 50%;
+}
+
 .cover {
     display: flex;
     flex-direction: column;
@@ -12,9 +31,12 @@
 }
 
 .post {
-    border: 1px solid #e7e7e7;
+    border: 1px solid #f0f0f0;
     padding: 15px;
+}
 
+.post:hover {
+    border-color: #dadada;
 }
 
 .post>.top {
