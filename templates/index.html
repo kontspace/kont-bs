@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block mainbody %}
+    <div class="cover header">
+        {% load staticfiles %}
+        <embed style="height: 100px;" class="logo" src="{% static 'images/internet.svg' %}" type="image/svg+xml"></embed>
+        <h1 style="color: white; font-size: 60px">Athena Blog System</h1>
+        <h4>八百标兵奔北坡，北坡炮兵并排跑，炮兵怕把标兵碰，标兵怕碰炮兵炮</h4>
+    </div>
+    <div class="middle-content">
+        {% block middlecontent %}{% endblock %}
+    </div>
+    <div class="footer">
+        <span>八百标兵奔北坡，北坡炮兵并排跑，炮兵怕把标兵碰，标兵怕碰炮兵炮</span>
+    </div>
+{% endblock %}

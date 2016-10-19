@@ -8,7 +8,6 @@ from django.db import models
 
 
 class Post(models.Model):
-    uuid = models.UUIDField('文章uuid', default=uuid.uuid4, editable=False)
     title = models.CharField(u'文章标题', max_length=200, help_text=u'文章标题')
     created_at = models.DateTimeField('创建日期', auto_now_add=True)
     updated_at = models.DateTimeField('最后修改日期', auto_now=True)

@@ -8,20 +8,14 @@
     <link rel="stylesheet" href="{% static 'css/icon.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/github-markdown.css' %}">
+    {% block mainheader %}{% endblock %}
+
 </head>
 <body class="main">
-    <div class="cover header">
-        <embed style="height: 100px;" class="logo" src="{% static 'images/internet.svg' %}" type="image/svg+xml"></embed>
-        <h1 style="color: white; font-size: 60px">Athena Blog System</h1>
-        <h4>八百标兵奔北坡，北坡炮兵并排跑，炮兵怕把标兵碰，标兵怕碰炮兵炮</h4>
-    </div>
-    <div class="middle-content">
-        {% block content %}{% endblock %}
-    </div>
-    <div class="footer">
-        <h4>八百标兵奔北坡，北坡炮兵并排跑，炮兵怕把标兵碰，标兵怕碰炮兵炮</h4>
-    </div>
+    {% block mainbody %}{% endblock %}
 </body>
     <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    {% block mainfooter %}{% endblock %}
 </html>

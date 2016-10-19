@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load markdown_filter %}
+{% load staticfiles %}
+
+{% block mainheader %}
+    <link rel="stylesheet" href="{% static 'css/github-gist.css' %}">
+{% endblock %}
+
+{% block mainbody %}
+<article id="preview" class="markdown-body">
+    {{ file_content | markdown | safe}}
+</article>
+{% endblock %}
+
+{% block mainfooter %}
+    <script src="{% static 'js/highlight.pack.js' %}"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+{% endblock %}
