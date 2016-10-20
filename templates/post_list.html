@@ -5,30 +5,32 @@
 
     <div class="center">
         <div class="posts">
+            {% for post in posts %}
             <div class="post">
                 <div class="top">
                     <span class="label label-primary">Python</span>
-                    <span class="avatar">L</span>
+                    {#<span class="avatar">L</span>#}
                 </div>
                 <div class="middle">
-                    <h4 class="post-title"><a href="#">Python 的每日一刻，我是标题要长长的。。Python 的每日一刻，我是标题要长长的。。Python 的每日一刻，我是标题要长长的。。</a></h4>
+                    <h4 class="post-title"><a href="/posts/{{ post.id }}">{{ post.title }}</a></h4>
                 </div>
                 <div class="bottom">
                     <div class="datetime ps">
                         <i class="iconfont">&#xe600;</i>
-                        <span>2016-01-09 15:40</span>
+                        <span>{{ post.updated_at }}</span>
                     </div>
                     <div class="views ps">
                         <i class="iconfont">&#xe601;</i>
-                        <span>2016</span>
+                        <span>{{ post.views }}</span>
 
                     </div>
                     <div class="category ps">
                         <i class="iconfont">&#xe602;</i>
-                        <span>Python</span>
+                        <span>{{ post.category.name }}</span>
                     </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
     </div>
     <div class="right"></div>

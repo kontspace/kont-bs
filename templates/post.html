@@ -11,7 +11,8 @@
     <article id="preview" class="markdown-body">
     {{ file_content | markdown | safe}}
     </article>
-    <div class="ds-thread "
+    <div class="social-share fix-center"></div>
+    <div class="ds-thread fix-center"
          data-thread-key="{{request.get_full_path}}"
          data-title={{ object }}
          data-url='http://+{{request.get_host}}{{request.get_full_path}}' />
@@ -20,4 +21,5 @@
 {% block mainfooter %}
     <script src="{% static 'js/highlight.pack.js' %}"></script>
     <script>hljs.initHighlightingOnLoad();</script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.15/js/social-share.min.js"></script>
 {% endblock %}

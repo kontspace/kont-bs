@@ -8,6 +8,10 @@ class PostListView(ListView):
     context_object_name = 'posts'
     template_name = 'post_list.html'
 
+    def get_context_data(self, **kwargs):
+        context = super(PostListView, self).get_context_data(**kwargs)
+        return context
+
 
 class PostDetailView(DetailView):
     model = Post
@@ -20,4 +24,6 @@ class PostDetailView(DetailView):
 
     def get_object(self):
         object = super(PostDetailView, self).get_object()
+        object.views += 1
+        object.save()
         return object
