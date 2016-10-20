@@ -103,3 +103,11 @@
     margin: 0 auto;
     padding: 45px;
 }
+
+.ds-thread {
+    width: 960px;
+    max-width: 960px;
+    margin: auto;
+    min-width: 200px;
+    padding: 0px 45px 45px 45px;
+}

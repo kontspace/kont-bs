@@ -8,9 +8,13 @@
 {% endblock %}
 
 {% block mainbody %}
-<article id="preview" class="markdown-body">
+    <article id="preview" class="markdown-body">
     {{ file_content | markdown | safe}}
-</article>
+    </article>
+    <div class="ds-thread "
+         data-thread-key="{{request.get_full_path}}"
+         data-title={{ object }}
+         data-url='http://+{{request.get_host}}{{request.get_full_path}}' />
 {% endblock %}
 
 {% block mainfooter %}
