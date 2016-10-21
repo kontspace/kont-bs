@@ -20,7 +20,7 @@ class Post(models.Model):
     updated_at = models.DateTimeField('最后修改日期', auto_now=True)
     post_file = models.FileField(u'文件', upload_to='upload')
     category = models.ForeignKey(Category, related_name='post', null=True, blank=True)
-    views = models.IntegerField(u'阅读数量', default=0)
+    views = models.IntegerField(u'阅读数量', default=0, editable=False)
 
     class Meta:
         ordering = ['-created_at']
