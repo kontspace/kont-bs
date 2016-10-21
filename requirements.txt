@@ -1,6 +1,5 @@
 blessings==1.6
 curtsies==0.2.10
-Cython==0.24.1
 Django==1.10.2
 django-admin-bootstrapped==2.5.7
 greenlet==0.4.10
