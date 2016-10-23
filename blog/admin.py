@@ -9,7 +9,7 @@ class PostProfileAdmin(admin.ModelAdmin):
     list_filter = ('category', 'created_at')
 
 admin.site.register(Post, PostProfileAdmin)
-# admin.site.register(Category)
+admin.site.register(Category)
 
 admin.site.unregister(User)
 admin.site.unregister(Group)
