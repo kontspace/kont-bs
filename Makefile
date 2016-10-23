@@ -1,10 +1,11 @@
 host:=0.0.0.0
-port:=8000
+port:=6000
 
 debug:
 	./manage.py runserver $(host):$(port)
 
 start-uwsgi:
+	. $(shell pwd)/venv/bin/activate && \
 	uwsgi --socket 127.0.0.1:$(port) \
 		--chdir $(shell pwd) \
 		--wsgi-file Athena/wsgi.py \
