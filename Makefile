@@ -1,5 +1,5 @@
-host:=127.0.0.1
-port:=6000
+host:=0.0.0.0
+port:=8000
 
 debug:
 	./manage.py runserver $(host):$(port)
@@ -26,8 +26,13 @@ collectstatic:
 	. $(shell pwd)/venv/bin/activate && \
 	./manage.py collectstatic --noinput
 
+deploy-gunicorn:
+	. $(shell pwd)/venv/bin/activate && \
+	gunicorn -w 4 Athena.wsgi -b $(host):$(port)
+
 .PHONY: debug \
 	collectstatic \
 	reload-uwsgi \
 	start-uwsgi \
-	stop-uwsgi
+	stop-uwsgi \
+	debug-gunicorn	
