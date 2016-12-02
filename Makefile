@@ -4,6 +4,10 @@ port:=8000
 debug:
 	./manage.py runserver $(host):$(port)
 
+collectstatic:
+	. $(shell pwd)/venv/bin/activate && \
+	./manage.py collectstatic --noinput
+
 start-uwsgi:
 	. $(shell pwd)/venv/bin/activate && \
 	uwsgi --socket $(host):$(port) \
@@ -22,17 +26,23 @@ reload-uwsgi:
 	. $(shell pwd)/venv/bin/activate && \
 	uwsgi --reload uwsgi.pid
 
-collectstatic:
+start-gunicorn:
 	. $(shell pwd)/venv/bin/activate && \
-	./manage.py collectstatic --noinput
+	gunicorn -w 4 Athena.wsgi \
+		 -b $(host):$(port) \
+		 --pid $(shell pwd)/gunicorn.pid
 
-deploy-gunicorn:
-	. $(shell pwd)/venv/bin/activate && \
-	gunicorn -w 4 Athena.wsgi -b $(host):$(port)
+stop-gunicorn:
+	kill -9 `cat $(shell pwd)/gunicorn.pid`
+
+reload-gunicorn:
+	kill -HUP `cat $(shell pwd)/gunicorn.pid`
 
 .PHONY: debug \
 	collectstatic \
 	reload-uwsgi \
 	start-uwsgi \
 	stop-uwsgi \
-	debug-gunicorn	
+	start-gunicorn \
+	stop-gunicorn \
+	reload-gunicorn
