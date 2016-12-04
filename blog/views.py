@@ -1,6 +1,7 @@
-from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from .models import Post
+
+import info_config
 
 
 class PostListView(ListView):
@@ -10,6 +11,7 @@ class PostListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(PostListView, self).get_context_data(**kwargs)
+        context['info'] = info_config
         return context
 
 
