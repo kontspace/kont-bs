@@ -1,3 +1,7 @@
+body {
+    margin: auto;
+    font-family: "Titillium Web", Helvetica, Arial, sans-serif;
+}
 .main {
     display: flex;
     min-height: 100vh;
@@ -92,7 +96,7 @@
     /*flex-direction: column;*/
     justify-content: center;
     /*align-items: center;*/
-    height: 125px;
+    height: 130px;
     background-color: #4ECDC4;
     color: white;
     margin-top: 10px;
