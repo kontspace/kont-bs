@@ -15,6 +15,8 @@ body {
 
 .middle-content > .left {
     flex: 0 0 25%;
+    display: flex;
+    flex-direction: column;
 }
 
 .middle-content > .center {
@@ -167,4 +169,42 @@ body {
 
 .social-share {
     padding: 0px 0px 0px 45px;
+}
+
+.slide {
+    margin: 10px 10px 0 10px;
+    border: 1px solid #f0f0f0;
+    color: #888888;
+    max-width: 300px;
+}
+
+.slide-title {
+    padding: 10px 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 1px solid #f0f0f0;
+
+}
+
+.slide > .slide-items {
+    /*padding-left: 10px;*/
+}
+
+.slide > .slide-items > .slide-item {
+    padding: 10px 20px;
+}
+
+.slide > .slide-items > .slide-item:not(:last-child) {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.slide > .slide-items > .slide-item > a {
+    color: #888888;
+}
+
+.post-counts {
+    color: #888888;
+    background-color: white;
+    font-weight: normal;
+    border: 1px solid #f0f0f0;
 }

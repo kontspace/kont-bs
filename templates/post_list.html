@@ -1,7 +1,15 @@
 {% extends "index.html" %}
 
 {% block middlecontent %}
-    <div class="left"></div>
+    <div class="left">
+        <div class="slide">
+            <div class="slide-items">
+                {% for category_name, category_number in categories.items %}
+                    <div class="slide-item"><a href="?category={{ category_name }}"><span>{{ category_name|title }}</span><span class="badge pull-right post-counts">{{ category_number }}</span></a></div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 
     <div class="center">
         <div class="posts">
