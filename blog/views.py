@@ -1,9 +1,12 @@
 from django.views.generic import ListView, DetailView
+from django.conf import settings
 from .models import Post, Category
-
 from collections import OrderedDict as _OrderedDict
 
-import info_config
+import yaml
+import os
+
+CONFIGFILE = os.path.join(settings.BASE_DIR, 'config.yml')
 
 
 def get_category_numbers():
@@ -33,7 +36,10 @@ class PostListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = self.get_default_context(**kwargs)
-        context['info'] = info_config
+
+        with open(CONFIGFILE) as f:
+            context['info'] = yaml.safe_load(f)
+
         context['categories'] = get_category_numbers()
         context['title'] = 'Athena'
         return context
