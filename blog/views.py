@@ -35,6 +35,7 @@ class PostListView(ListView):
         context = self.get_default_context(**kwargs)
         context['info'] = info_config
         context['categories'] = get_category_numbers()
+        context['title'] = 'Athena'
         return context
 
 
@@ -45,6 +46,7 @@ class PostDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super(PostDetailView, self).get_context_data(**kwargs)
         context['file_content'] = kwargs['object'].post_file.read()
+        context['title'] = kwargs['object'].title
         return context
 
     def get_object(self):
