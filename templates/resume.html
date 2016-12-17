@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block mainheader %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/timeline.css' %}">
+    <link rel="stylesheet" href="{% static 'css/aboutme.css' %}">
+
+    <script src="{% static 'js/modernizr.js' %}"></script>
+{% endblock %}
+
+{% block mainbody %}
+    <header class="resume-head">
+		<h1>Resume</h1>
+	</header>
+
+	<section id="cd-timeline" class="cd-container">
+    {% for resume in resumes %}
+        <div class="cd-timeline-block">
+			<div class="cd-timeline-img resume-location-bg">
+                <img src="{% static 'images/location.svg' %}" alt="Location">
+			</div>
+
+			<div class="cd-timeline-content">
+				<h2>{{ resume.company }}</h2>
+                <h3>{{ resume.position }}</h3>
+                {{ resume.verbose_for_work | linebreaks }}
+				<span class="cd-date">{{ resume.entry_time }} ~ {{ resume.time_of_separation }}</span>
+			</div>
+		</div>
+    {% endfor %}
+
+	</section>
+{% endblock %}
+
+{% block mainfooter %}
+    <script src="{% static 'js/timeline.js' %}"></script>
+{% endblock %}

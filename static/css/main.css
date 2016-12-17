@@ -37,6 +37,10 @@ body {
     height: 250px;
 }
 
+.cover h1 {
+    font-weight: normal;
+}
+
 
 .post {
     border: 1px solid #f0f0f0;

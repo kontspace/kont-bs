@@ -1,6 +1,10 @@
+#!/usr/bin/env python
+# -*- coding:utf-8 -*-
+
 from django.views.generic import ListView, DetailView
+from django.shortcuts import render_to_response
 from django.conf import settings
-from .models import Post, Category
+from .models import Post, Category, Resume
 from collections import OrderedDict as _OrderedDict
 
 import yaml
@@ -60,3 +64,17 @@ class PostDetailView(DetailView):
         object.views += 1
         object.save()
         return object
+
+
+class ResumeListView(ListView):
+    model = Resume
+    context_object_name = 'resumes'
+    template_name = 'resume.html'
+
+    def get_default_context(self, **kwargs):
+        return super(ResumeListView, self).get_context_data(**kwargs)
+
+    def get_context_data(self, **kwargs):
+        context = self.get_default_context(**kwargs)
+        context['title'] = 'Resume'
+        return context
