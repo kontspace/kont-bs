@@ -27,7 +27,7 @@
 				<h2>{{ resume.company }}</h2>
                 <h3>{{ resume.position }}</h3>
                 {{ resume.verbose_for_work | linebreaks }}
-				<span class="cd-date">{{ resume.entry_time }} ~ {{ resume.time_of_separation }}</span>
+				<span class="cd-date">{{ resume.entry_time }} ~ {{ resume.time_of_separation|default_if_none:"至今" }}</span>
 			</div>
 		</div>
     {% endfor %}
