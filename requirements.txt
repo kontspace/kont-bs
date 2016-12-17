@@ -1,4 +1,5 @@
 blessings==1.6
+bpython==0.16
 curtsies==0.2.10
 Cython==0.24.1
 Django==1.9
