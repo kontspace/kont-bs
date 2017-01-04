@@ -1,5 +1,5 @@
 host:=0.0.0.0
-port:=8000
+port:=8005
 
 debug:
 	./manage.py runserver $(host):$(port)
@@ -10,7 +10,7 @@ collectstatic:
 
 start-uwsgi:
 	. $(shell pwd)/venv/bin/activate && \
-	uwsgi --socket $(host):$(port) \
+	uwsgi --http $(host):$(port) \
 		--chdir $(shell pwd) \
 		--wsgi-file Athena/wsgi.py \
 		--master \
