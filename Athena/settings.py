@@ -23,7 +23,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'rf(ttil_^oxxcc!5pb)x)@s^fy4v22l1!xdc$=kevek4vh=bfc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG', True)
+debug = os.getenv('DEBUG', 'True')
+DEBUG = False if debug == 'False' else True
 
 ALLOWED_HOSTS = [] if DEBUG else ['hexiangyu.me', 'www.hexiangyu.me']
 
@@ -77,6 +78,7 @@ WSGI_APPLICATION = 'Athena.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
+DATABASES = {}
 if DEBUG:
     DATABASES = {
        'default': {
@@ -95,7 +97,6 @@ else:
             'PORT': '3306',
         }
     }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
