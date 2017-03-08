@@ -2,13 +2,6 @@
 
 {% block middlecontent %}
     <div class="left">
-        <div class="slide">
-            <div class="slide-items">
-                {% for category_name, category_number in categories.items %}
-                    <div class="slide-item"><a href="?category={{ category_name }}"><span>{{ category_name|title }}</span><span class="badge pull-right post-counts">{{ category_number }}</span></a></div>
-                {% endfor %}
-            </div>
-        </div>
     </div>
 
     <div class="center">
@@ -25,7 +18,7 @@
                 <div class="bottom">
                     <div class="datetime ps">
                         <i class="iconfont">&#xe600;</i>
-                        <span>{{ post.updated_at }}</span>
+                        <span>{{ post.created_at }}</span>
                     </div>
                     <div class="views ps">
                         <i class="iconfont">&#xe601;</i>
@@ -39,6 +32,13 @@
                 </div>
             </div>
             {% endfor %}
+        </div>
+        <div class="slide">
+            <div class="slide-items">
+                {% for category_name, category_number in categories.items %}
+                    <div class="slide-item"><a href="?category={{ category_name }}"><span>{{ category_name|title }}</span><span class="badge pull-right post-counts">{{ category_number }}</span></a></div>
+                {% endfor %}
+            </div>
         </div>
     </div>
     <div class="right"></div>
