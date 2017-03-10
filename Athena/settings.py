@@ -91,10 +91,10 @@ else:
         'default': {
             'ENGINE': 'django.db.backends.mysql',
             'NAME': 'athena',
-            'USER': 'root',
+            'USER': os.getenv('MYSQL_USER', 'root'),
             'PASSWORD': os.getenv('MYSQL_PASSWORD', 'mysql'),
-            'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
-            'PORT': '3306',
+            'HOST':  os.getenv('MYSQL_HOST', 'localhost'),
+            'PORT': os.getenv('MYSQL_PORT', '3306'),
         }
     }
 

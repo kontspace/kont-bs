@@ -14,6 +14,7 @@
     </div>
     <div class="footer">
         <div class="footer-left"></div>
+        {% if info %}
         <div class="footer-center">
             <div class="footer-center-left">
                 <div><i class="iconfont">&#xe69f;</i><a href={{ info.GITHUB }} target="_blank">zhengxiaowai</a></div>
@@ -28,11 +29,17 @@
 
         </div>
         <div class="footer-right">
+            {% if info.AD != 'off' %}
             <div class="ad">
-                <a href={{ info.VULTR }} target="_blank">
-                    <img class="ad-vultr" width="120px" src="{% static 'images/badge_ondark.svg' %}" alt="vultr">
+                <a href={{ info.ALIYUN }} target="_blank">
+                    <img class="ad-vultr" width="120px" src="{% static 'images/aliyun.png' %}" alt="vultr">
+                </a>
+                <a href={{ info.QINIU }} target="_blank">
+                    <img class="ad-vultr" width="120px" src="{% static 'images/qiniu.png' %}" alt="vultr">
                 </a>
             </div>
+            {% endif %}
         </div>
+        {% endif %}
     </div>
 {% endblock %}

@@ -12,6 +12,25 @@ import os
 
 CONFIGFILE = os.path.join(settings.BASE_DIR, 'config.yml')
 
+def get_meta_info():
+    info = {}
+    with open(CONFIGFILE) as f:
+        info = yaml.safe_load(f)
+    
+    meta = {
+       'GITHUB': os.getenv('GITHUB', None),
+       'LINKED': os.getenv('LINKED', None),
+       'EMAIL': os.getenv('EMAIL', None),
+       'COPYRIGHT': os.getenv('COPYRIGHT', None),
+    }
+
+    for k, v in meta.items():
+        if v != None:
+            info[k] = v
+        
+    info['AD'] = os.getenv('AD', 'on')
+
+    return info 
 
 def get_category_numbers():
     _categories = Category.objects.all().values_list('name')
@@ -41,11 +60,10 @@ class PostListView(ListView):
     def get_context_data(self, **kwargs):
         context = self.get_default_context(**kwargs)
 
-        with open(CONFIGFILE) as f:
-            context['info'] = yaml.safe_load(f)
+        context['info'] = get_meta_info()
 
         context['categories'] = get_category_numbers()
-        context['title'] = 'Athena'
+        context['title'] = os.getenv(SITE_NAME, 'Athena')
         return context
 
 
@@ -78,3 +96,4 @@ class ResumeListView(ListView):
         context = self.get_default_context(**kwargs)
         context['title'] = 'Resume'
         return context
+
