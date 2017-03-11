@@ -11,7 +11,7 @@ Kont Blog System 是一款基于 Djnago 开发的博客管理系统。
 
 ## 文档
 
-更多详细内容可以查看 [在线文档](bs.kont.space)
+更多详细内容可以查看 [在线文档](http://bs.kont.space)
 
 ## Demo
 
