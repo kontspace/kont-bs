@@ -6,6 +6,21 @@
 ```shell
 make collection
 ``` 
+# 环境变量
+
+在 [项目配置](configuration.md) 中的配置选都设置在启动之前，
+推荐的做法的创建一个 `env.sh` 文件，填入你需要配置，使用 `source` 命令生效，当然你也可以在命令行中一个一个的 `export`。
+
+```bash
+# env.sh
+export DEBUG=False
+export MYSQL_PASSWORD=*****
+```
+
+```shell
+source env.sh
+```
+
 
 # uWsgi 部署
 
