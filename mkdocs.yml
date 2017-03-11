@@ -1,0 +1,18 @@
+site_name: Kont BS 项目文档
+site_favicon: favicon.ico
+repo_url: https://github.com/kontspace/kont_bs
+site_description: Athena 博客系统文档
+site_author: 正小歪 Sean Ho
+copyright: copyright © 2016 - 2017 Sean Ho
+pages:
+    - 主页: index.md
+    - 用户指南:
+        - 快速开始: user-guide/getting_started.md
+        - 项目配置: user-guide/configuration.md
+        - 项目部署: user-guide/deploy.md
+        - 使用教程: user-guide/usage.md
+    - 关于:
+        - 授权许可: about/license.md
+        - 贡献代码: about/contributing.md
+        - 更新日志: about/release_notes.md
+theme: readthedocs

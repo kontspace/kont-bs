@@ -17,9 +17,9 @@ COPY ./requirements.txt /src/requirements.txt
 RUN pip install -r requirements.txt
 COPY . /src
 
-RUN echo "from django.contrib.auth.models import User; User.objects.create_superuser('${SUPER_USER:-admin}', '', '${SUPER_PASSWORD:-athena}')" | python manage.py shell >> /dev/null
 
 RUN python manage.py migrate
+RUN echo "from django.contrib.auth.models import User; User.objects.create_superuser('${SUPER_USER:-admin}', '', '${SUPER_PASSWORD:-athena}')" | python manage.py shell >> /dev/null
 CMD python manage.py runserver 0.0.0.0:8000
 
 EXPOSE 8000

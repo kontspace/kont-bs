@@ -95,3 +95,4 @@ uwsgi.pid
 staticfiles/
 gunicorn.pid
 env.sh
+.DS_Store
