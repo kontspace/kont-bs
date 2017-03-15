@@ -63,7 +63,7 @@ class PostListView(ListView):
         context['info'] = get_meta_info()
 
         context['categories'] = get_category_numbers()
-        context['title'] = os.getenv(SITE_NAME, 'Athena')
+        context['title'] = os.getenv('SITE_NAME', 'Athena')
         return context
 
 
