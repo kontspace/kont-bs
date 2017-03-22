@@ -1,6 +1,6 @@
 body {
     margin: auto;
-    font-family: "Titillium Web", Helvetica, Arial, sans-serif;
+    //font-family: "Titillium Web", Helvetica, Arial, sans-serif;
 }
 .main {
     display: flex;
@@ -80,7 +80,7 @@ body {
 }
 
 .middle > .post-title > a {
-    color: #888;
+    color: #282F44;
     text-decoration:none;
 }
 
@@ -210,7 +210,12 @@ body {
 }
 
 .slide > .slide-items > .slide-item > a {
-    color: #888888;
+    color: #282F44;
+}
+
+.slide > .slide-items > .slide-item > a:hover {
+    color: #29afec;
+    text-decoration:none;
 }
 
 .post-counts {
