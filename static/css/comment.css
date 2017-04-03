@@ -1,0 +1,15 @@
+.social-share {
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    background: #fff;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.souhucs {
+    background: #fff;
+    border-radius: 5px;
+    padding: 0 20px;
+    margin-bottom: 120px;
+}
