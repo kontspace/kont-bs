@@ -5,6 +5,7 @@
 
 {% block mainheader %}
     <link rel="stylesheet" href="{% static 'css/github-gist.css' %}">
+    <link rel="stylesheet" href="{% static 'css/markdown.css' %}">
 {% endblock %}
 
 {% block mainbody %}
@@ -19,7 +20,7 @@
          data-url='http://+{{request.get_host}}{{request.get_full_path}}' ></div>
     -->
     <!--PC和WAP自适应版-->
-    <div class='fix-center' id="SOHUCS" sid="cysUksV4X" ></div> 
+    <div class='fix-center souhucs' id="SOHUCS" sid="cysUksV4X" ></div> 
 {% endblock %}
 
 {% block mainfooter %}
