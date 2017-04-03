@@ -13,33 +13,17 @@
     <article id="preview" class="markdown-body">
     {{ file_content | markdown | safe}}
     </article>
-    <div class="social-share fix-center"></div>
-    <!--
-    <div class="ds-thread fix-center"
-         data-thread-key="{{request.get_full_path}}"
-         data-title={{ object }}
-         data-url='http://+{{request.get_host}}{{request.get_full_path}}' ></div>
-    -->
-    <!--PC和WAP自适应版-->
-    <div class='fix-center souhucs' id="SOHUCS" sid="cysUksV4X" ></div> 
+    <div class="comment">
+        <div class="social-share fix-center"></div>
+        <!--PC和WAP自适应版-->
+        <div class='fix-center souhucs' id="SOHUCS" sid="cysUksV4X" ></div> 
+    </div>
+
 {% endblock %}
 
 {% block mainfooter %}
     <script src="{% static 'js/highlight.pack.js' %}"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <!-- 多说已跪，替换成搜狐畅言
-    <script type="text/javascript">
-        var duoshuoQuery = {short_name:"hexiangyu"};
-        (function() {
-            var ds = document.createElement('script');
-            ds.type = 'text/javascript';ds.async = true;
-            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-            ds.charset = 'UTF-8';
-            (document.getElementsByTagName('head')[0]
-            || document.getElementsByTagName('body')[0]).appendChild(ds);
-        })();
-    </script>
-    -->
     <script src="{% static 'js/souhu-changyan.js' %}"></script>
     <script src="{% static 'js/social-share.min.js' %}"></script>
 {% endblock %}

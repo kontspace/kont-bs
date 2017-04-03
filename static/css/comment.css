@@ -4,12 +4,14 @@
     justify-content: center;
     background: #fff;
     border-radius: 5px;
-    padding-top: 20px;
+    /*padding-top: 20px;*/
 }
 
-#SOHUCS {
+.comment {
     background: #fff;
     border-radius: 5px;
     padding: 20px;
+    width: 680px;
+    margin: auto;
     margin-bottom: 120px;
 }
