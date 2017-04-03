@@ -1,0 +1,35 @@
+.slide {
+    margin: 10px 20px 20px 20px;
+    color: #282F44;
+    max-width: 280px;
+    width: 280px;
+}
+
+.slide-title {
+    padding-bottom: 10px;
+
+}
+
+.slide > .slide-items {
+    background: #fff;
+    border-radius: 5px;
+}
+
+.slide > .slide-items > .slide-item {
+    padding: 10px 20px;
+}
+
+.slide > .slide-items > .slide-item:not(:last-child) {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.slide > .slide-items > .slide-item > a {
+    color: #282F44;
+    display: inline-block;
+    width: 100%;
+}
+
+.slide > .slide-items > .slide-item > a:hover {
+    color: #29afec;
+    text-decoration:none;
+}

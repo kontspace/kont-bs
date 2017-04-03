@@ -1,5 +1,10 @@
 {% extends "index.html" %}
 
+{% block mainheader %}
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/slides.css' %}">
+{% endblock %}
+
 {% block middlecontent %}
     <div class="left">
     </div>
@@ -33,12 +38,83 @@
             </div>
             {% endfor %}
         </div>
-        <div class="slide">
-            <div class="slide-items">
-                {% for category_name, category_number in categories.items %}
-                    <div class="slide-item"><a href="?category={{ category_name }}"><span>{{ category_name|title }}</span><span class="badge pull-right post-counts">{{ category_number }}</span></a></div>
-                {% endfor %}
+        <div class="slides">
+            <div class="slide">
+                <!--默认存在文章分类-->
+                <div class="slide-title"><span>文章分类：</span></div>
+                <div class="slide-items">
+                    {% for category_name, category_number in categories.items %}
+                        <div class="slide-item">
+                            <a href="?category={{ category_name }}">
+                                <span>{{ category_name|title }}</span>
+                                <span class="badge pull-right post-counts">{{ category_number }}</span>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
             </div>
+
+            {% if open_source_projects %}
+            <div class="slide">
+                <!--开源项目-->
+                <div class="slide-title"><span>我的开源项目：</span></div>
+                <div class="slide-items">
+                {% for project in open_source_projects %}
+                    <div class="slide-item">
+                        <a href="{{ project.link }}">
+                            <span>{{ project.name }}</span>
+                        </a>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            {% if contributed_projects %}
+            <div class="slide">
+                <!--贡献过的开源项目-->
+                <div class="slide-title"><span>我贡献过的开源项目：</span></div>
+                <div class="slide-items">
+                {% for project in contributed_projects %}
+                    <div class="slide-item">
+                        <a href="{{ project.link }}">
+                            <span>{{ project.name }}</span>
+                        </a>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            {% if aboutme %}
+            <div class="slide">
+                <!--关于我，社交联系方式-->
+                <div class="slide-title"><span>关于我：</span></div>
+                <div class="slide-items">
+                {% for item in aboutme %}
+                    <div class="slide-item">
+                        <a href="{{ item.link }}">
+                            <span>{{ item.item }}</span>
+                        </a>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            {% if contact %}
+            <div class="slide">
+                <!--联系方式-->
+                <div class="slide-title"><span>联系方式：</span></div>
+                <div class="slide-items">
+                {% for info in contact %}
+                    <div class="slide-item">
+                        <span>{{ info.method }}: {{ info.detail }}</span>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+            {% endif %}
         </div>
     </div>
     <div class="right"></div>

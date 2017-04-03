@@ -4,7 +4,7 @@
 from django.views.generic import ListView, DetailView
 from django.shortcuts import render_to_response
 from django.conf import settings
-from .models import Post, Category, Resume
+from .models import Post, Category, Resume, ContactInfo, Aboutme, OpenSourceProject, ContributedProject
 from collections import OrderedDict as _OrderedDict
 
 import yaml
@@ -40,6 +40,17 @@ def get_category_numbers():
     categories_numbers.update({x: Post.objects.filter(category__name=x).count() for x in categories})
     return categories_numbers
 
+def get_contact_info():
+    return ContactInfo.objects.all()
+
+def get_aboutme():
+    return Aboutme.objects.all()
+
+def get_open_source_projects():
+    return OpenSourceProject.objects.all()
+
+def get_contributed_projects():
+    return ContributedProject.objects.all()
 
 class PostListView(ListView):
     model = Post
@@ -61,9 +72,14 @@ class PostListView(ListView):
         context = self.get_default_context(**kwargs)
 
         context['info'] = get_meta_info()
-
         context['categories'] = get_category_numbers()
         context['title'] = os.getenv('SITE_NAME', 'Athena')
+        context['open_source_projects'] = get_open_source_projects()
+        context['contributed_projects'] = get_contributed_projects()
+        context['aboutme'] = get_aboutme()
+        context['contact'] = get_contact_info()
+
+
         return context
 
 
