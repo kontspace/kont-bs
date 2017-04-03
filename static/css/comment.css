@@ -4,12 +4,12 @@
     justify-content: center;
     background: #fff;
     border-radius: 5px;
-    padding: 10px;
+    padding-top: 20px;
 }
 
-.souhucs {
+#SOHUCS {
     background: #fff;
     border-radius: 5px;
-    padding: 0 20px;
+    padding: 20px;
     margin-bottom: 120px;
 }
