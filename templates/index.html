@@ -20,12 +20,15 @@
         <div class="footer-right">
             {% if info.AD != 'off' %}
             <div class='poweredby'><span>POWERED BY: </span></div>
-            <div class="ad">
+            <div class="ads">
+                <a href={{ info.DJANGO }} target="_blank">
+                    <img class="ad" width="120px" src="{% static 'images/django.svg' %}" alt="django">
+                </a>
                 <a href={{ info.ALIYUN }} target="_blank">
-                    <img class="ad-vultr" width="120px" src="{% static 'images/aliyun.png' %}" alt="vultr">
+                    <img class="ad" width="120px" src="{% static 'images/aliyun.png' %}" alt="aliyun">
                 </a>
                 <a href={{ info.QINIU }} target="_blank">
-                    <img class="ad-vultr" width="120px" src="{% static 'images/qiniu.png' %}" alt="vultr">
+                    <img class="ad" width="120px" src="{% static 'images/qiniu.png' %}" alt="qiniu">
                 </a>
             </div>
             {% endif %}
