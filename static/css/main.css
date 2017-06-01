@@ -52,7 +52,7 @@ body {
     color: #888888;
 }
 .ps:not(:first-child) {
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
 .middle > .post-title > a:hover {
