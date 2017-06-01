@@ -1,17 +1,17 @@
-.social-share {
-    padding: 0px;
-    display: flex;
-    justify-content: center;
-    background: #fff;
-    border-radius: 5px;
-    /*padding-top: 20px;*/
+
+
+
+/*PC*/
+@media screen and (min-width: 480px) {
+    .comment {
+        width: 680px;
+        margin: auto;
+    }
 }
 
-.comment {
-    background: #fff;
-    border-radius: 5px;
-    padding: 20px;
-    width: 680px;
-    margin: auto;
-    margin-bottom: 120px;
+/*Mobile*/
+@media screen and (max-width: 480px) {
+    .comment {
+        padding: 10px;
+    }
 }
