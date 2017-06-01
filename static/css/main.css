@@ -51,9 +51,6 @@ body {
 .post > .bottom > .category {
     color: #888888;
 }
-.ps:not(:first-child) {
-    margin-left: 10px;
-}
 
 .middle > .post-title > a:hover {
     color: #29afec;
@@ -88,6 +85,10 @@ body {
     .posts {
         max-width: 640px;
         width: 640px;
+    }
+
+    .ps:not(:first-child) {
+        margin-left: 20px;
     }
 
     .avatar {
@@ -168,6 +169,11 @@ body {
 
     .middle > .post-title > a {
         font-size: 16px;
+    }
+
+    .post > .bottom {
+        display: flex;
+        flex-direction: column;
     }
 
     .footer {
