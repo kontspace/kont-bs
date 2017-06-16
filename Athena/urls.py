@@ -16,10 +16,16 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from blog.views import PostListView, PostDetailView, ResumeListView
+from django.contrib import admin
 
 urlpatterns = [
     url(r'^$', PostListView.as_view(), name='post-list'),
     url(r'^posts/(?P<pk>[0-9]+)$', PostDetailView.as_view(), name='post-detail'),
     url(r'^resume', ResumeListView.as_view(), name='resume'),
-    url(r'^admin/', admin.site.urls),
+    url(r'^xadmin/', admin.site.urls),
 ]
+
+# change admin title and header
+
+admin.site.site_header = 'He Xiangyu Blog. Administration'
+admin.site.site_title = 'He Xiangyu Blog. Administration'
