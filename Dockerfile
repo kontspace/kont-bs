@@ -1,20 +1,20 @@
-FROM ubuntu:14.04
+FROM python:2.7-alpine
 
-RUN sudo sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list
-RUN apt-get update 
-RUN apt-get install -y \ 
-    build-essential \
-    libmysqlclient-dev \
-    python-dev \
-    libffi-dev \
-    libssl-dev \
-    libxml2-dev \
-    zlib1g-dev \
-    python-pip 
+#RUN sudo sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list
+#RUN apt-get update 
+#RUN apt-get install -y \ 
+#    build-essential \
+#    libmysqlclient-dev \
+#    python-dev \
+#    libffi-dev \
+#    libssl-dev \
+#    libxml2-dev \
+#    zlib1g-dev \
+#    python-pip 
 
 WORKDIR /src
-COPY ./requirements.txt /src/requirements.txt
-RUN pip install -r requirements.txt
+COPY ./requirements/common.txt /src/requirements-common.txt
+RUN pip install -r requirements-common.txt
 COPY . /src
 
 
