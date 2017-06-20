@@ -9,7 +9,7 @@ from django.db import models
 class Category(models.Model):
     name = models.CharField(u'类别名字', max_length=200)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
 
@@ -24,6 +24,6 @@ class Post(models.Model):
     class Meta:
         ordering = ['-created_at']
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
