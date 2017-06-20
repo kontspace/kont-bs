@@ -4,7 +4,8 @@
 from django.views.generic import ListView, DetailView
 from django.shortcuts import render_to_response
 from django.conf import settings
-from .models import Post, Category, Resume, ContactInfo, Aboutme, OpenSourceProject, ContributedProject
+from .models import Post, Category
+from personal_info.models import Resume, ContactInfo, Aboutme, OpenSourceProject, ContributedProject
 from collections import OrderedDict as _OrderedDict
 
 import yaml

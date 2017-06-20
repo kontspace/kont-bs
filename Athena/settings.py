@@ -26,7 +26,7 @@ SECRET_KEY = 'rf(ttil_^oxxcc!5pb)x)@s^fy4v22l1!xdc$=kevek4vh=bfc'
 debug = os.getenv('DEBUG', 'True')
 DEBUG = False if debug == 'False' else True
 
-ALLOWED_HOSTS = [] if DEBUG else ['hexiangyu.me', 'www.hexiangyu.me']
+ALLOWED_HOSTS = ['10.115.132.207'] if DEBUG else ['hexiangyu.me', 'www.hexiangyu.me']
 
 
 # Application definition
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'personal_info',
 ]
 
 MIDDLEWARE_CLASSES = [
